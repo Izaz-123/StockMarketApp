@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Investing.com </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd, #6610f2);
+            color: #fff;
+            height: 100vh;
+        }
+
+        .login-card {
+            background-color: #ffffff;
+            color: #000;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b5ed7;
+        }
+
+        .form-control:focus {
+            border-color: #0d6efd;
+            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+        }
+
+        .login-heading {
+            font-weight: bold;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="login-card col-12 col-sm-8 col-md-6 col-lg-4">
+        <h3 class="text-center mb-4 login-heading">Register now</h3>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+          {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-control" placeholder="Enter username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
+
+             <div class="mb-3">
+                <label for="email" class="form-label">Email </label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="number" id="phone" name="phone" class="form-control" placeholder="Enter phone number" required>
+            </div>
+
+             <div class="mb-3">
+                <label for="profile_pic" class="form-label">Profile Picture</label>
+                <input type="file" id="profile_pic" name="profile_pic" class="form-control" placeholder="Select Profile Picture" required>
+            </div>
+
+             <div class="mb-3">
+                <label for="pancard_pic" class="form-label">Pancard Picture</label>
+                <input type="file" id="pancard_pic" name="pancard_pic" class="form-control" placeholder="Select Pancard Picture" required>
+            </div>
+
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <div class="text-center">
+                <small class="text-muted">Already have an account? <a href="/login/" class="text-primary">Login</a></small>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
