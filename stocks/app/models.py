@@ -31,12 +31,11 @@ class UserInfo(models.Model):
         return self.user.username
 
 class UserStocks(models.Model):
-
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     stock = models.ForeignKey(Stocks, on_delete=models.CASCADE)
     buy_price = models.FloatField()
     buy_quantity = models.IntegerField()
 
     def __str__(self):
-        return self.user.username
+        return self.stock.ticker
 

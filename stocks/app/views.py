@@ -12,7 +12,6 @@ import requests
 
 
 
-
 # # Create your views here.
 def getData(request) :
     nasdaq_tickers = [
