@@ -11,7 +11,7 @@
            <strong> <li class="nav-item"><a class="nav-link" href="{% url 'market' %}">Stocks</a></li></strong>
 
 
-            {% if request.user.is_authenticated %}
+            {% if user.is_authenticated %}
                             <strong> <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="bi bi-person"></i> {{user}} </a></li></strong>
             {% else %}
                    <strong> <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login </a></li></strong>
