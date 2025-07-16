@@ -27,7 +27,7 @@ A full-featured stock trading simulator built using **Django** and **REST API**,
 
 | Login     | Register | Portfolio | Stocks | Profile |
 |-----------|----------|-----------|--------|---------|
-| <img width="2940" height="1754" alt="1" src="https://github.com/user-attachments/assets/ed1797d3-6e36-405b-89a1-0d0cf0678d01" />/> | <img width="2940" height="1754" alt="2" src="https://github.com/user-attachments/assets/a0b046c2-853a-4116-81aa-4992db65e234" /> | <img width="2940" height="1754" alt="3" src="https://github.com/user-attachments/assets/cb322026-f07c-4789-9e87-e6ba522ee28b" />| <img width="2940" height="1754" alt="4" src="https://github.com/user-attachments/assets/fcf25c1b-4db8-48ae-9279-751566173d3a" /> | <img width="2940" height="1754" alt="5" src="https://github.com/user-attachments/assets/f6142831-57a0-4353-9555-2f353a16536e" /> | <img width="2940" height="1754" alt="5" src="https://github.com/user-attachments/assets/213e8215-19f5-408c-9841-085f716da433" /> |
+| <img width="2940" height="1754" alt="1" src="https://github.com/user-attachments/assets/ed1797d3-6e36-405b-89a1-0d0cf0678d01" />| <img width="2940" height="1754" alt="2" src="https://github.com/user-attachments/assets/a0b046c2-853a-4116-81aa-4992db65e234" /> | <img width="2940" height="1754" alt="3" src="https://github.com/user-attachments/assets/cb322026-f07c-4789-9e87-e6ba522ee28b" />| <img width="2940" height="1754" alt="4" src="https://github.com/user-attachments/assets/fcf25c1b-4db8-48ae-9279-751566173d3a" /> | <img width="2940" height="1754" alt="5" src="https://github.com/user-attachments/assets/f6142831-57a0-4353-9555-2f353a16536e" /> | <img width="2940" height="1754" alt="5" src="https://github.com/user-attachments/assets/213e8215-19f5-408c-9841-085f716da433" /> |
 
 
 
