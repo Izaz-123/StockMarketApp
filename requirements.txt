@@ -1,7 +1,7 @@
-django
-pillow
-psycopg2-binary
-requests
-dj-database-url
-uvicorn
-django_crondj-database-url==3.0.1
+django==4.2.23
+pillow>=9.0.0
+psycopg2-binary>=2.9.5
+requests>=2.28.0
+dj-database-url>=0.5.0
+uvicorn[standard]>=0.22.0
+django-cron>=0.6.0
