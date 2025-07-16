@@ -17,9 +17,9 @@ A full-featured stock trading simulator built using **Django** and **REST API**,
 
 ## 🛠 Tech Stack
 
-| Frontend | Backend | API/Data | Tools |
-|----------|---------|----------|-------|
-| HTML, CSS, Bootstrap | Django, Python, Django REST Framework | [Tiingo API](https://www.tiingo.com/) | Git, GitHub |
+| Frontend | Backend | API/Data | Tools | Hosted on | Database |
+|----------|---------|----------|-------|-----------|----------|
+| HTML, CSS, Bootstrap | Django, Python, Django REST Framework | [Tiingo API](https://www.tiingo.com/) | Git, GitHub | Render | Supabase PostgreSQL |
 
 ---
 
@@ -32,9 +32,11 @@ A full-featured stock trading simulator built using **Django** and **REST API**,
 
 
 ---
+## Live demo 
 
+Check out the live version of the application here: https://stockmarketsimulator.onrender.com
 
-
+---
 
 
 
