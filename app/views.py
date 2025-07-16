@@ -103,7 +103,7 @@ def stocks(request):
     else:
         stocks_list = Stocks.objects.all()
 
-    paginator = Paginator(stocks_list, 10)  # 10 stockmarket per page
+    paginator = Paginator(stocks_list, 10)  # 10 stockmarkett per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -226,7 +226,7 @@ def sellView(request,id):
     user_stocks = UserStocks.objects.filter(stock = stock, user = user).first()
 
     if user_stocks.buy_quantity < sell_quantity:
-        messages.error(request, "Sorry, you do not have enough stockmarket to sell!")
+        messages.error(request, "Sorry, you do not have enough stockmarkett to sell!")
         return redirect("market")
     user_stocks.buy_quantity -= sell_quantity
     user_stocks.save()

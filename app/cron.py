@@ -8,7 +8,9 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from ...models import *
+from django_cron import CronJobBase, Schedule
+from django_cron import CronJobBase, Schedule
+from .models import *
 import requests
 
 
@@ -93,17 +95,16 @@ def update_stocks() :
         )
 
 
-    nasdaq_tickers =  nasdaq_tickers[:50]
+    nasdaq_tickers =  nasdaq_tickers[:10]
     for i in nasdaq_tickers :
         getStock(i)
 
 
 
 
-
-class Command(BaseCommand):
-    help = 'Get stockmarket data from Tiingo API'
-    def handle(self, *args, **options):
+class StockUpdateCronJob(CronJobBase):
+    RUN_AT_TIMES = ['06:00']
+    schedule = Schedule(run_at_times=RUN_AT_TIMES)
+    code = 'stockmarkett.stock_update_cron'
+    def do(self):
         update_stocks()
-        self.stdout.write("Stocks Data Downloaded")
-
