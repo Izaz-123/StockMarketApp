@@ -1,7 +1,0 @@
-django
-pillow
-psycopg2-binary
-requests
-dj-database-url
-uvicorn
-django_cron
