@@ -4,97 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Investing.com - Market</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="{% static 'market.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<style>
-    .card {
-    margin: 15px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: 0.3s ease-in-out;
-}
-.card:hover {
-    transform: scale(1.02);
-}
-.nav
-{
-    display: flex;
-    justify-content: space-between;
-    background: #1154e3;
-    color:white ;
-    padding: 15px ;
-    margin: 0;
-
-    border-radius: 5px;
-
-}
-
-
-.nav  ul
-{
-    display: flex;
-    list-style:  none;
-    justify-content: space-between;
-    gap : 20px;
-}
-
-.nav h3:hover ,  .nav li:hover , .nav a:hover
-{
-    color :  deepskyblue;
-    cursor: pointer;
-    transform: translate(-1px, -3px);
-    transition: all 0.3s ease-in-out;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-}
-
-.footer {
-    background: #0d6efd;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top:10px;
-    font-size: 14px;
-}
-
-.footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.footer li {
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.footer li:hover {
-    color: deepskyblue;
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-.footer a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s ease-in-out;
-}
-
-.footer a:hover {
-    color: #a4bcc3;
-}
-
-
-.search-container {
-    position: relative;
-}
-
-</style>
 </head>
 <body>
 
@@ -104,12 +16,8 @@
 
   <!-- 🔍 Search Bar -->
   <form method="get" action="" class="text-center mb-4">
-    <input type="text" name="q" placeholder="Search stocks..." value="{{ query }}"
-           style="padding: 10px; width: 300px; border-radius: 8px; border: 1px solid #ccc;">
-    <button type="submit"
-            style="padding: 10px 20px; border-radius: 8px; background-color: #0d6efd; color: white; border: none; cursor: pointer;">
-      Search
-    </button>
+    <input type="text" name="q" placeholder="Search stocks..." value="{{ query }}" class="search-bar">
+    <button type="submit" class="search-button">Search</button>
   </form>
 
   <!-- 📦 Stocks -->
@@ -121,18 +29,10 @@
             <h5 class="card-title">{{ stock.name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ stock.ticker }}</h6>
             <p class="card-text">{{ stock.description|truncatechars:120 }}</p>
-            <p class = "card-text"><strong>Current Price : </strong>{{stock.curr_price}}</p>
-           {% if quantity %}
-        <p class="card-text"><strong>Quantity: </strong>{{ quantity }}</p>
-      {% endif %}
-
-
-
-<!--            {% with user_stock=stock.user_owned.0 %}-->
-<!--              {% if user_stock %}-->
-<!--                <p class="card-text"><strong>Quantity: {{ user_stock.buy_quantity }}</strong></p>-->
-<!--              {% endif %}-->
-<!--            {% endwith %}-->
+            <p class="card-text"><strong>Current Price:</strong> {{ stock.curr_price }}</p>
+            {% if quantity %}
+              <p class="card-text"><strong>Quantity:</strong> {{ quantity }}</p>
+            {% endif %}
 
             <!-- Buy Form -->
             <form method="POST" action="{% url 'buy' stock.id %}" class="mb-2">
@@ -151,7 +51,6 @@
                 <button type="submit" class="btn btn-danger">Sell</button>
               </div>
             </form>
-
           </div>
         </div>
       </div>

@@ -75,3 +75,86 @@
 .search-container {
     position: relative;
 }
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+body {
+    background: #f0f2f5;
+}
+
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+.profile-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    max-width: 800px;    /* Smaller than 800px if image looks too big */
+    margin: 0 auto;
+}
+.profile-pic {
+    width: 100%;
+    height: 300px;              /* Adjust for proportion */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+body.register-page {
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: #fff;
+    height: 100vh;
+}
+
+.login-card {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.login-heading {
+    font-weight: bold;
+    color: #0d6efd;
+}

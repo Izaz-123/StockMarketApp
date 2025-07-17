@@ -71,26 +71,38 @@ def update_stocks() :
         'Content-Type': 'application/json'
     }
     token  =  "c49fcd942798abe37ee4b9b2d971058db6fe6bb2"
-    def getStock(ticker):
-        url  = f"https://api.tiingo.com/tiingo/daily/{ticker}?token={token}"
-        priceurl  =  f"https://api.tiingo.com/tiingo/daily/{ticker}/prices?token={token}"
-        requestResponse = requests.get(url, headers=headers )
-        Metadata  = requestResponse.json()
-        print(Metadata)
-        priceData  = requests.get(priceurl , headers=headers)
-        print(priceData.json())
-        priceData =  priceData.json()[0]['close']
 
-        # insert into SQL
-        #stock = Stocks(ticker  = Metadata['ticker']  , name  =  Metadata['name'] ,  description =  Metadata['description'] , curr_price  = priceData)
-        Stocks.objects.update_or_create(
-            ticker=Metadata['ticker'],
-            defaults={
-                'name': Metadata['name'],
-                'description': Metadata['description'],
-                'curr_price': priceData
-            }
-        )
+    def getStock(ticker):
+        url = f"https://api.tiingo.com/tiingo/daily/{ticker}?token={token}"
+        priceurl = f"https://api.tiingo.com/tiingo/daily/{ticker}/prices?token={token}"
+
+        try:
+            requestResponse = requests.get(url, headers=headers)
+            Metadata = requestResponse.json()
+
+            priceResponse = requests.get(priceurl, headers=headers)
+            priceJson = priceResponse.json()
+
+            # Debug prints for development
+            print(f"Metadata for {ticker}: {Metadata}")
+            print(f"Price data for {ticker}: {priceJson}")
+
+            if isinstance(priceJson, list) and len(priceJson) > 0 and 'close' in priceJson[0]:
+                close_price = priceJson[0]['close']
+
+                Stocks.objects.update_or_create(
+                    ticker=Metadata.get('ticker', ticker),
+                    defaults={
+                        'name': Metadata.get('name', ''),
+                        'description': Metadata.get('description', ''),
+                        'curr_price': close_price
+                    }
+                )
+            else:
+                print(f"⚠️ Price data for {ticker} is empty or invalid: {priceJson}")
+
+        except Exception as e:
+            print(f"❌ Error processing ticker {ticker}: {e}")
 
 
     nasdaq_tickers =  nasdaq_tickers[:50]
