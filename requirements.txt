@@ -5,6 +5,5 @@ requests>=2.28.0
 dj-database-url>=0.5.0
 uvicorn[standard]>=0.22.0
 whitenoise
-
 django-cron>=0.6.0
 
