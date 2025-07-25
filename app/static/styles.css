@@ -33,14 +33,17 @@
     color: white;
 }
 
-.footer {
-    background: #0d6efd;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top:10px;
-    font-size: 14px;
-}
+/*.footer {*/
+/*    position: fixed;*/
+/*    background: #0d6efd;*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    padding: 30px 20px;*/
+/*    margin-top:10px;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*--------*/
 
 .footer ul {
     list-style: none;
