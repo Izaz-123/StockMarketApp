@@ -27,7 +27,10 @@ SECRET_KEY = 'django-insecure-yw$1h04mq51o#c+om0cco(c@ny7j%*g^84qg%38z4k$xj)2zp!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://stockmarketapp-644837403308.asia-south2.run.app'
+]
 
 
 # Application definition
