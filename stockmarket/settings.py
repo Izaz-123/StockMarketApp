@@ -31,7 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'stockmarketapp-644837403308.asia-south2.run.app',
     '127.0.0.1',
-    'localhost'
+    'localhost',
     'stockmarketsimulator.onrender.com'
 ]
 CSRF_TRUSTED_ORIGINS = [
