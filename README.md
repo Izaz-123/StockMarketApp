@@ -33,8 +33,8 @@ A full-featured stock trading simulator built using **Django** and **REST API**,
 
 ---
 ## Live demo 
-
-Check out the live version of the application here: https://stockmarketsimulator.onrender.com
+Check out the live version of the application hosted on GCP here: https://stockmarketapp-644837403308.asia-south2.run.app
+Check out the live version of the application hosted on render here: https://stockmarketsimulator.onrender.com
 
 ---
 
